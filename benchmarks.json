@@ -1,0 +1,118 @@
+{
+    "test0": [
+        "AAPL",
+        "MSFT",
+        "AMZN",
+        "TSLA",
+        "NFLX"
+    ],
+    "test1": [
+        "EBAY",
+        "GOOGL",
+        "IBM",
+        "QCOM",
+        "AAPL",
+        "GE",
+        "AMD",
+        "SHOP",
+        "AMZN",
+        "F",
+        "BABA",
+        "TSLA",
+        "NKE",
+        "PEP"
+    ],
+    "test2": [
+        "UBER",
+        "AMD",
+        "SNAP",
+        "CRM",
+        "DIS",
+        "F",
+        "MSFT",
+        "TWTR",
+        "MRNA",
+        "SPOT",
+        "ZM",
+        "V"
+    ],
+    "test3": [
+        "XOM",
+        "SONY",
+        "CSCO",
+        "FDX",
+        "SHOP"
+    ],
+    "test4": [
+        "ZM",
+        "V",
+        "TSLA",
+        "MCD",
+        "META",
+        "SONY",
+        "UBER"
+    ],
+    "test5": [
+        "ORCL",
+        "INTC",
+        "GE",
+        "TWTR",
+        "NFLX",
+        "QCOM",
+        "PYPL",
+        "SONY",
+        "NKE",
+        "TM",
+        "XOM",
+        "GOOGL",
+        "AMD",
+        "F"
+    ],
+    "test6": [
+        "SNAP",
+        "INTC",
+        "TSLA",
+        "DIS",
+        "ORCL",
+        "AMZN",
+        "CRM",
+        "ROKU",
+        "ZM",
+        "BA",
+        "FDX",
+        "AMD",
+        "EBAY",
+        "JNJ"
+    ],
+    "test7": [
+        "SQ",
+        "BABA",
+        "PYPL",
+        "DIS",
+        "SNAP",
+        "ROKU",
+        "XOM",
+        "MRNA",
+        "TM",
+        "ZM"
+    ],
+    "test8": [
+        "TWTR",
+        "SQ",
+        "EBAY",
+        "MSFT",
+        "ORCL",
+        "SONY"
+    ],
+    "test9": [
+        "SBUX",
+        "GE",
+        "BABA",
+        "BA",
+        "INTC",
+        "WMT",
+        "LMT",
+        "SPOT",
+        "AMZN"
+    ]
+}

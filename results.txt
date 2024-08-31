@@ -1,0 +1,32 @@
+Completed test0 for sequential
+Completed test0 for parallel
+Completed test1 for sequential
+Completed test1 for parallel
+Completed test2 for sequential
+Completed test2 for parallel
+Completed test3 for sequential
+Completed test3 for parallel
+Completed test4 for sequential
+Completed test4 for parallel
+Completed test5 for sequential
+Completed test5 for parallel
+Completed test6 for sequential
+Completed test6 for parallel
+Completed test7 for sequential
+Completed test7 for parallel
+Completed test8 for sequential
+Completed test8 for parallel
+Completed test9 for sequential
+Completed test9 for parallel
+Difference for test0 is: 49.72
+Difference for test1 is: 157.06
+Difference for test2 is: 123.14
+Difference for test3 is: 55.60
+Difference for test4 is: 78.80
+Difference for test5 is: 151.92
+Difference for test6 is: 155.95
+Difference for test7 is: 107.50
+Difference for test8 is: 50.74
+Difference for test9 is: 96.37
+Overall average difference is: 102.68s
+The speedup for parallel is: 2.61

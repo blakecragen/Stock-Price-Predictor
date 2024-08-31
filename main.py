@@ -8,6 +8,8 @@ from sortedcollections import SortedDict
 import json
 import threading
 
+lock = threading.Lock()
+
 # Step 1: Fetch data from Robinhood or alternative source
 def fetch_stock_data(ticker, interval='day', span='5year'):
     rh.login(username='username', password='password')
@@ -59,7 +61,7 @@ def predict_stock_price(model, X_test, scaler):
     predicted_stock_price = scaler.inverse_transform(predicted_stock_price)
     return predicted_stock_price
 
-def predict_tomorrow_price(symbol='APPL'):
+def predict_tomorrow_price(symbol='APPL', future_prices={}):
     try:
         with lock:
             data = fetch_stock_data(symbol, span='3month')  # Fetch stock data
@@ -75,25 +77,27 @@ def predict_tomorrow_price(symbol='APPL'):
         # Access with lock since it is a shared storage
         with lock:
             future_prices[symbol] = sum(predictions)/len(predictions) # Store prediction
+        
+        print(f"Completed Prediction for {symbol}")
     except Exception as e:
         print(f"Error processing {symbol}: {e}")
+    return
 
+def main():
+    stocks = json.load(open('stocks.json'))
+    future_prices = SortedDict()
+    threads = []
 
-stocks = json.load(open('stocks.json'))
-future_prices = SortedDict()
-threads = []
-lock = threading.Lock()
+    for symbol in stocks['stocks']:
+        # Create a thread for each stock
+        thread = threading.Thread(target=predict_tomorrow_price, args=(symbol,future_prices,))
+        threads.append(thread)
+        thread.start()  # Start the thread
+        
 
-for symbol in stocks['stocks']:
-    # Create a thread for each stock
-    thread = threading.Thread(target=predict_tomorrow_price, args=(symbol,))
-    threads.append(thread)
-    thread.start()  # Start the thread
-    
+    # Wait for all threads to complete
+    for thread in threads:
+        thread.join()
 
-# Wait for all threads to complete
-for thread in threads:
-    thread.join()
-
-for stock in future_prices:
-    print(f"Estimated price of {stock} is: ${float(future_prices[stock]):.2f}")
+    for stock in future_prices:
+        print(f"Estimated price of {stock} is: ${float(future_prices[stock]):.2f}")
